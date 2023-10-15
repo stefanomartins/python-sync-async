@@ -4,7 +4,6 @@ import json
 import asyncio
 
 
-
 async def get_jokes(joke_id: int):
     url = "https://api.chucknorris.io/jokes/random"
     jokes = []
@@ -19,8 +18,7 @@ async def get_jokes(joke_id: int):
 async def main():
     tasks = []
 
-    for i in range(0, 50):
-        tasks.append(get_jokes(joke_id=i))
+    tasks = [get_jokes(joke_id=i) for i in range(0, 50)]
 
     await asyncio.gather(*tasks)
 
