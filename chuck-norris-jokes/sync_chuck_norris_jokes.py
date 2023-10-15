@@ -2,8 +2,6 @@ import httpx
 import time
 import json
 
-start_time = time.perf_counter()
-
 
 def main():
     url = "https://api.chucknorris.io/jokes/random"
@@ -18,6 +16,7 @@ def main():
 
 
 if __name__ == "__main__":
+    start_time = time.perf_counter()
     main()
     end_time = time.perf_counter()
     print(f"Tempo total de execução: {round(end_time - start_time)} segundos")
